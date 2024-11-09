@@ -554,7 +554,7 @@ monogatari.assets ('gallery', {
 
 // Define the music used in the game.
 monogatari.assets ('music', {
-	'mainTheme': 'ambient-piano-peaceful-and-relaxing-music-237007.mp3',
+	'mainTheme': 'ambient-piano-peaceful-and-relaxing-music-237007.mp3'
 });
 
 // Define the voice files used in the game.
@@ -564,7 +564,7 @@ monogatari.assets ('voices', {
 
 // Define the sounds used in the game.
 monogatari.assets ('sounds', {
-	'monsterRoar': 'scary-monster-roar-2-6256.mp3',
+	'monsterRoar': 'scary-monster-roar-2-6256.mp3'
 });
 
 // Define the videos used in the game.
@@ -577,17 +577,78 @@ monogatari.assets ('images', {
 
 });
 
+
 // Define the backgrounds for each scene.
 monogatari.assets ('scenes', {
-	'visitor-center-entrance': 'images/start-nick.JPG',
+	// Start    
+	'visitor-center-entrance': 'start-visitorcenter.JPG',
+    'visitor-center-nick': 'start-nick.JPG',
+
+    // Visitor Center
+    'visitor-center-silkworms': 'welcome1-silkworms.JPG',
+    'visitor-center-silkworms-closeup': 'welcome1-silkwormcloseup.JPG',
+    'visitor-center-video': 'welcome2-video.JPG',
+    'visitor-center-video-nick': 'welcome2-videowithnick.JPG',
+    'visitor-center-video-kuwamaru': 'welcome2-videokuwamaru.JPG',
+    'visitor-center-video-tajima': 'welcome2-videomistertajima.JPG',
+    'visitor-center-exhibithouse': 'welcome2-exhibithouse.JPG',
+    'visitor-center-exhibitbook': 'welcome2-exhibitbook.JPG',
+    'visitor-center-exhibitmicroscope': 'welcome2-exhibitmicroscope.JPG',
+    'visitor-center-exhibitshibusawa': 'welcome2-exhibitshibusawa.JPG',
+    'visitor-center-oldvisitorcenter': 'welcome2-oldvisitorcenter.JPG',
+
+    // Path to Tajima House
+    'path1a-backgate': 'path1a-backgate.JPG',
+    'path1b-signboard': 'path1a-signboard.JPG',
+    'path1c-acrosstheroad': 'path1a-acrosstheroad.JPG',
+    'path1d-mulberries': 'path1a-mulberries.JPG',
+
+    // Tajima Residence
+    'tajima1-maingate': 'tajima1-maingate.JPG',
+    'tajima1-everyonetogether': 'tajima1-everyonetogether.JPG',
+    'tajima1-houseandgarden': 'tajima1-houseandgarden.JPG',
+    'tajima1-museumandbuildings': 'tajima1-museumandbuildings.JPG',
+    'tajima1-parismedals': 'tajima1-parismedals.JPG',
+    'tajima1-museum1': 'tajima1-museum1.JPG',
+    'tajima1-museum2': 'tajima1-museum2.JPG',
+    'tajima1-museum3': 'tajima1-museum3.JPG',
+    'tajima1-coldstorage': 'tajima1-coldstorage.JPG',
+    'tajima1-workbuilding': 'tajima1-workbuilding.JPG',
+    'tajima1-workbuildingbathroom': 'tajima1-workbuildingbathroom.JPG',
+    'tajima1-backgate': 'tajima1-backgate.JPG',
+
+    'tajima2-outside': 'tajima2-outside.JPG',
+    'tajima2-buheihouse': 'tajima2-buheihouse.JPG',
+    'tajima2-relatives': 'tajima2-relatives.JPG',
+    'tajima2-backside': 'tajima2-backside.JPG',
+
+    'tajima1-backgate': 'tajima1-backgate.JPG',
+    
+
+    // Path back to Visitor Center
+
+    // Meet up at Visitor Center
+    'welcome-end': 'welcome-end.JPG'
+
 });
 
 
 // Define the Characters
 monogatari.characters ({
-	'p': {
+'p': {
 		name: '{{player.name}}',
-		color: '#ff3951'
+		color: '#ff3951',
+		directory: 'Player',
+		sprites: {
+			normal: 'player (1).jpg',
+			handsonhips: 'player (2).jpg'
+
+		},
+		expressions: {
+			normal: 'player (1).jpg',
+			handsonhips: 'player (2).jpg'
+
+		},
 	},
 	'k': {
 		name: 'Kuwamaru',
@@ -612,6 +673,58 @@ monogatari.characters ({
 		},
 		expressions: {
 			normal: 'nick-normal.jpg',
+
+		},
+	},
+	'z1': {
+		name: 'Zombie',
+		color: '#5bcaff',
+		directory: 'Zombies',
+		sprites: {
+			normal: '1.jpg',
+
+		},
+		expressions: {
+			normal: '1.jpg',
+
+		},
+	},
+	'z2': {
+		name: 'Zombie',
+		color: '#5bcaff',
+		directory: 'Zombies',
+		sprites: {
+			normal: '2.jpg',
+
+		},
+		expressions: {
+			normal: '2.jpg',
+
+		},
+	},
+	'z3': {
+		name: 'Zombie',
+		color: '#5bcaff',
+		directory: 'Zombies',
+		sprites: {
+			normal: '3.jpg',
+
+		},
+		expressions: {
+			normal: '3.jpg',
+
+		},
+	},
+	'z4': {
+		name: 'Zombie',
+		color: '#5bcaff',
+		directory: 'Zombies',
+		sprites: {
+			normal: '4.jpg',
+
+		},
+		expressions: {
+			normal: '4.jpg',
 
 		},
 	}
@@ -658,6 +771,7 @@ monogatari.script ({
 		'hide particles',
 
 		'k:normal Hi {{player.name}}! Welcome to our adventure!',
+		'p:normal Hi, Kuwamaru!',
 		'k:normal Today we are going to the Tajima Yahei Sericulture Farm.',
 		'k:normal Nick is here with us right now.',
 
@@ -665,7 +779,7 @@ monogatari.script ({
 		{
 			'Choice': {
 
-				'Dialog': 'centered Do you want to say hello to Nick? <br><br><br><br><br><br><br><br><br><br>',
+				'Dialog': 'centered Do you know Nick? <br><br><br><br><br><br><br><br><br><br>',
 				
 				'Yes': {
 					'Text': 'Yes, say hello to Nick',
@@ -680,41 +794,131 @@ monogatari.script ({
 	],
 
 	'Start-Hello-Nick-Yes': [
-		'{{player.name}} Hi, Nick!',
-		'n Hello, {{player.name}}!',
-		'n It\'s good to see you again!',
-		'n Let\'s get going on our adventure today!',
+		'show scene visitor-center-entrance with fadeIn',
+		'p:normal Hi, Nick!',
+		'n:normal Hello, {{player.name}}!',
+		'n:normal It\'s good to see you again!',
+		'n:normal Let\'s get going on our adventure today!',
 		'jump Welcome-Center-1'
 	],
 	
 	'Start-Hello-Nick-No': [
-		'{{player.name}} Hi, Nick!',
-		'n Hello, {{player.name}}!',
-		'n It\'s good to see you again!',
-		'n Let\'s get going on our adventure today!',
+		'show scene visitor-center-entrance with fadeIn',
+		'p:normal Ummm... ',
+		'n:normal Hello, {{player.name}}!',
+		'k:normal Nick is a teacher at Goshi Elementary and Sakai Nishi Junior High.',
+		'n:normal It\'s a pleasure to meet you!',
+		'p:normal Oh, nice to meet you, too, Nick!',
 		'jump Welcome-Center-1'
 	],
 
+	// Foreshadow Monsters
 
 	'Welcome-Center-1': [
-
-		'show scene visitor-center-entrance with wobble .1s',
-		'show scene visitor-center-entrance with wobble .1s',
-		'show scene visitor-center-entrance with wobble .1s',
-		//'play sound monsterRoar with loop',
+		'show scene visitor-center-entrance with fadeIn',
+		'k:normal We are at the Visitor Center now.',
+		'k:normal Let\'s go in.',
 		'stop music mainTheme with fade 2',
-
-
-
+		'show scene visitor-center-entrance with shake 1s',
+		'play sound monsterRoar with volume 30',
+		'k:normal !! What was that?!',
+		'play music mainTheme with volume 20 fade 2 loop',
 		'show scene visitor-center-entrance with fadeIn',
 
 		'k:normal !! What was that?!',
-		'k:normal I hope we\'re OK',
+		'p:normal I don\'t know.',
+		'n:normal Was it a dog?',
+		'k:normal I guess it\s OK.',
+		'k:normal So... let\s go in.',
+		'p:normal OK. After you!',
+		
+		'jump Welcome-Center-2',
+	],
+
+	
+	// Going inside the visitor center
+
+	'Welcome-Center-2': [
+		'show scene visitor-center-entrance with fadeIn',
+		'k:normal We are at the Visitor Center now.',
+		'k:normal Let\'s go in.',
+		'stop music mainTheme with fade 2',
+		'show scene visitor-center-entrance with shake 1s',
+		'play sound monsterRoar with volume 30',
+		'k:normal !! What was that?!',
 		'play music mainTheme with volume 20 fade 2 loop',
+		'show scene visitor-center-entrance with fadeIn',
+
+		'k:normal !! What was that?!',
+		'p:normal I don\'t know.',
+		'n:normal Was it a dog?',
+		'k:normal I guess it\s OK.',
+		'k:normal So... let\s go in.',
+		'p:normal OK. After you!',
+
+
+		
+			
+		
+        // Start    
+        'show scene visitor-center-entrance with fadeIn',
+        'show scene visitor-center-nick with fadeIn',
+
+        // Visitor Center
+        'show scene visitor-center-silkworms with fadeIn',
+        'show scene visitor-center-silkworms-closeup with fadeIn',
+        'show scene visitor-center-video with fadeIn',
+        'show scene visitor-center-video-nick with fadeIn',
+        'show scene visitor-center-video-kuwamaru with fadeIn',
+        'show scene visitor-center-video-tajima with fadeIn',
+        'show scene visitor-center-exhibithouse with fadeIn',
+        'show scene visitor-center-exhibitbook with fadeIn',
+        'show scene visitor-center-exhibitmicroscope with fadeIn',
+        'show scene visitor-center-exhibitshibusawa with fadeIn',
+        'show scene visitor-center-oldvisitorcenter with fadeIn',
+
+        // Path to Tajima House
+        'show scene path1a-backgate with fadeIn',
+        'show scene path1b-signboard with fadeIn',
+        'show scene path1c-acrosstheroad with fadeIn',
+        'show scene path1d-mulberries with fadeIn',
+
+        // Tajima Residence
+        'show scene tajima1-maingate with fadeIn',
+        'show scene tajima1-everyonetogether with fadeIn',
+        'show scene tajima1-houseandgarden with fadeIn',
+        'show scene tajima1-museumandbuildings with fadeIn',
+        'show scene tajima1-parismedals with fadeIn',
+        'show scene tajima1-museum1 with fadeIn',
+        'show scene tajima1-museum2 with fadeIn',
+        'show scene tajima1-museum3 with fadeIn',
+        'show scene tajima1-coldstorage with fadeIn',
+        'show scene tajima1-workbuilding with fadeIn',
+        'show scene tajima1-workbuildingbathroom with fadeIn',
+        'show scene tajima1-backgate with fadeIn',
+
+        'show scene tajima2-outside with fadeIn',
+        'show scene tajima2-buheihouse with fadeIn',
+        'show scene tajima2-relatives with fadeIn',
+        'show scene tajima2-backside with fadeIn',
+
+        'show scene tajima1-backgate with fadeIn',
+        'show scene tajima1-backgate with fadeIn',
+
+        // Path back to Visitor Center
+
+        // Meet up at Visitor Center
+        'show scene welcome-end with fadeIn',
+
+
+
+
+		
 
 		{
 			'Choice': {
-				'Dialog': 'Nick Have you already read some documentation?',
+				'Dialog': 'n:normal I think it was a little earthquake. Have you already read some documentation?',
+
 				'Yes': {
 					'Text': 'Yes',
 					'Do': 'jump Yes'

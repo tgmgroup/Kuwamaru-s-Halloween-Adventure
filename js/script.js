@@ -535,8 +535,8 @@ monogatari.action ('canvas').objects ({
 // Credits of the people involved in the creation of this awesome game
 monogatari.configuration ('credits', {
 	'Artists': {
-		'Backgrounds <a href="https://queenbeebee.carrd.co/" target="_blank">George Liu</a>',
-		'Sprites <a href="https://queenbeebee.carrd.co/" target="_blank">Queen BeeBee</a>'
+		'Backgrounds': '<a href="https://queenbeebee.carrd.co/" target="_blank">George Liu</a>',
+		'Sprites': '<a href="https://queenbeebee.carrd.co/" target="_blank">Queen BeeBee</a>'
 	},
 	'Audio': {
 		'Music': `<span xmlns:cc='http://creativecommons.org/ns#' about='urn:sha1:IJ6UMFRNC6G7KCRWZJWZYCPR5Y2XIXCG'>
@@ -554,7 +554,7 @@ monogatari.assets ('gallery', {
 
 // Define the music used in the game.
 monogatari.assets ('music', {
-	'mainTheme ambient-piano-peaceful-and-relaxing-music-237007.mp3',
+	'mainTheme': 'ambient-piano-peaceful-and-relaxing-music-237007.mp3'
 });
 
 // Define the voice files used in the game.
@@ -564,7 +564,7 @@ monogatari.assets ('voices', {
 
 // Define the sounds used in the game.
 monogatari.assets ('sounds', {
-	'monsterRoar scary-monster-roar-2-6256.mp3',
+	'monsterRoar': 'scary-monster-roar-2-6256.mp3'
 });
 
 // Define the videos used in the game.
@@ -577,67 +577,65 @@ monogatari.assets ('images', {
 
 });
 
+
 // Define the backgrounds for each scene.
 monogatari.assets ('scenes', {
 	// Start    
-	'visitor-center-entrance start-visitorcenter.JPG',
-    'visitor-center-nick start-nick.JPG',
+	'visitor-center-entrance': 'start-visitorcenter.JPG',
+    'visitor-center-nick': 'start-nick.JPG',
 
     // Visitor Center
-    'visitor-center-silkworms welcome1-silkworms.JPG',
-    'visitor-center-silkworms-closeup welcome1-silkwormcloseup.JPG',
-    'visitor-center-video welcome2-video.JPG',
-    'visitor-center-video-nick welcome2-videowithnick.JPG',
-    'visitor-center-video-kuwamaru welcome2-videokuwamaru.JPG',
-    'visitor-center-video-tajima welcome2-videomistertajima.JPG',
-    'visitor-center-exhibithouse welcome2-exhibithouse.JPG',
-    'visitor-center-exhibitbook welcome2-exhibitbook.JPG',
-    'visitor-center-exhibitmicroscope welcome2-exhibitmicroscope.JPG',
-    'visitor-center-exhibitshibusawa welcome2-exhibitshibusawa.JPG',
-    'visitor-center-oldvisitorcenter welcome2-oldvisitorcenter.JPG',
+    'visitor-center-silkworms': 'welcome1-silkworms.JPG',
+    'visitor-center-silkworms-closeup': 'welcome1-silkwormcloseup.JPG',
+    'visitor-center-video': 'welcome2-video.JPG',
+    'visitor-center-video-nick': 'welcome2-videowithnick.JPG',
+    'visitor-center-video-kuwamaru': 'welcome2-videokuwamaru.JPG',
+    'visitor-center-video-tajima': 'welcome2-videomistertajima.JPG',
+    'visitor-center-exhibithouse': 'welcome2-exhibithouse.JPG',
+    'visitor-center-exhibitbook': 'welcome2-exhibitbook.JPG',
+    'visitor-center-exhibitmicroscope': 'welcome2-exhibitmicroscope.JPG',
+    'visitor-center-exhibitshibusawa': 'welcome2-exhibitshibusawa.JPG',
+    'visitor-center-oldvisitorcenter': 'welcome2-oldvisitorcenter.JPG',
 
     // Path to Tajima House
-    'path1a-backgate path1a-backgate.JPG',
-    'path1b-signboard path1a-signboard.JPG',
-    'path1c-acrosstheroad path1a-acrosstheroad.JPG',
-    'path1d-mulberries path1a-mulberries.JPG',
+    'path1a-backgate': 'path1a-backgate.JPG',
+    'path1b-signboard': 'path1a-signboard.JPG',
+    'path1c-acrosstheroad': 'path1a-acrosstheroad.JPG',
+    'path1d-mulberries': 'path1a-mulberries.JPG',
 
     // Tajima Residence
-    'tajima1-maingate tajima1-maingate.JPG',
-    'tajima1-everyonetogether tajima1-everyonetogether.JPG',
-    'tajima1-houseandgarden tajima1-houseandgarden.JPG',
-    'tajima1-museumandbuildings tajima1-museumandbuildings.JPG',
-    'tajima1-parismedals tajima1-parismedals.JPG',
-    'tajima1-museum1 tajima1-museum1.JPG',
-    'tajima1-museum2 tajima1-museum2.JPG',
-    'tajima1-museum3 tajima1-museum3.JPG',
-    'tajima1-coldstorage tajima1-coldstorage.JPG',
-    'tajima1-workbuilding tajima1-workbuilding.JPG',
-    'tajima1-workbuildingbathroom tajima1-workbuildingbathroom.JPG',
-    'tajima1-backgate tajima1-backgate.JPG',
+    'tajima1-maingate': 'tajima1-maingate.JPG',
+    'tajima1-everyonetogether': 'tajima1-everyonetogether.JPG',
+    'tajima1-houseandgarden': 'tajima1-houseandgarden.JPG',
+    'tajima1-museumandbuildings': 'tajima1-museumandbuildings.JPG',
+    'tajima1-parismedals': 'tajima1-parismedals.JPG',
+    'tajima1-museum1': 'tajima1-museum1.JPG',
+    'tajima1-museum2': 'tajima1-museum2.JPG',
+    'tajima1-museum3': 'tajima1-museum3.JPG',
+    'tajima1-coldstorage': 'tajima1-coldstorage.JPG',
+    'tajima1-workbuilding': 'tajima1-workbuilding.JPG',
+    'tajima1-workbuildingbathroom': 'tajima1-workbuildingbathroom.JPG',
+    'tajima1-backgate': 'tajima1-backgate.JPG',
 
-    'tajima2-outside tajima2-outside.JPG',
-    'tajima2-buheihouse tajima2-buheihouse.JPG',
-    'tajima2-relatives tajima2-relatives.JPG',
-    'tajima2-backside tajima2-backside.JPG',
+    'tajima2-outside': 'tajima2-outside.JPG',
+    'tajima2-buheihouse': 'tajima2-buheihouse.JPG',
+    'tajima2-relatives': 'tajima2-relatives.JPG',
+    'tajima2-backside': 'tajima2-backside.JPG',
 
-    'tajima1-backgate tajima1-backgate.JPG',
-    'tajima1-backgate tajima1-backgate.JPG',
+    'tajima1-backgate': 'tajima1-backgate.JPG',
+    
 
     // Path back to Visitor Center
 
     // Meet up at Visitor Center
-    'welcome-end welcome-end.JPG',
+    'welcome-end': 'welcome-end.JPG'
 
 });
 
 
-
-
-
 // Define the Characters
 monogatari.characters ({
-	'p': {
+'p': {
 		name: '{{player.name}}',
 		color: '#ff3951',
 		directory: 'Player',
@@ -734,8 +732,6 @@ monogatari.characters ({
 
 monogatari.script ({
 	// The game starts here.
-
-	// Start Scene -- At the Visitor Center
 	'Start': [
 					'clear',
 			'show scene black with fadeIn',
@@ -746,7 +742,7 @@ monogatari.script ({
 		'play music mainTheme with volume 20 fade 2 loop',
 		{
 			'Input': {
-				'Text What is your name?',
+				'Text': 'What is your name?',
 				'Validation': function (input) {
 					return input.trim ().length > 0;
 				},
@@ -765,7 +761,7 @@ monogatari.script ({
 						}
 					});
 				},
-				'Warning You must enter a name!'
+				'Warning': 'You must enter a name!'
 			}
 		},
 
@@ -777,28 +773,31 @@ monogatari.script ({
 		'k:normal Hi {{player.name}}! Welcome to our adventure!',
 		'p:normal Hi, Kuwamaru!',
 		'k:normal Today we are going to the Tajima Yahei Sericulture Farm.',
-		'k:normal Nick is here with us right now.',
+		'k:normal We are at the Visitor Center now.',
+		'k:normal Let\'s go meet up with Nick.',
 
-		'show scene black with fadeIn',
+
+		'show scene visitor-center-entrance with fadeIn',
 		{
 			'Choice': {
 
-				'Dialog centered Do you know Nick? <br><br><br><br><br><br><br><br><br><br>',
+				//'Dialog': 'centered Do you know Nick? <br><br><br><br><br><br><br><br><br><br>',
+				'Dialog': 'k:normal Do you know Nick? ',
 				
 				'Yes': {
-					'Text Yes, say hello to Nick',
-					'Do jump Start-Hello-Nick-Yes'
+					'Text': 'Yes, let\'s say hello to Nick.',
+					'Do': 'jump Start-Hello-Nick-Yes'
 				},
 				'No': {
-					'Text No, who is Nick?',
-					'Do jump Start-Hello-Nick-No'
+					'Text': 'No, who is Nick?',
+					'Do': 'jump Start-Hello-Nick-No'
 				}
 			}
 		}
 	],
 
 	'Start-Hello-Nick-Yes': [
-		'show scene visitor-center-entrance with fadeIn',
+		'show scene visitor-center-nick with fadeIn',
 		'p:normal Hi, Nick!',
 		'n:normal Hello, {{player.name}}!',
 		'n:normal It\'s good to see you again!',
@@ -809,6 +808,7 @@ monogatari.script ({
 	'Start-Hello-Nick-No': [
 		'show scene visitor-center-entrance with fadeIn',
 		'p:normal Ummm... ',
+		'show scene visitor-center-nick with fadeIn',
 		'n:normal Hello, {{player.name}}!',
 		'k:normal Nick is a teacher at Goshi Elementary and Sakai Nishi Junior High.',
 		'n:normal It\'s a pleasure to meet you!',
@@ -819,100 +819,76 @@ monogatari.script ({
 	// Foreshadow Monsters
 
 	'Welcome-Center-1': [
-		'show scene visitor-center-entrance with fadeIn',
-		'k:normal We are at the Visitor Center now.',
+		'show scene visitor-center-nick with fadeIn',
+		'n:normal So this is the entrance to the visitor center.',
 		'k:normal Let\'s go in.',
 		'stop music mainTheme with fade 2',
-		'show scene visitor-center-entrance with shake 1s',
+		'show scene visitor-center-nick with shake 1s',
 		'play sound monsterRoar with volume 30',
 		'k:normal !! What was that?!',
 		'play music mainTheme with volume 20 fade 2 loop',
-		'show scene visitor-center-entrance with fadeIn',
+		'show scene visitor-center-nick with fadeIn',
 
 		'k:normal !! What was that?!',
 		'p:normal I don\'t know.',
 		'n:normal Was it a dog?',
-		'k:normal I guess it\s OK.',
+		'k:normal Maybe. I guess it\s OK.',
 		'k:normal So... let\s go in.',
 		'p:normal OK. After you!',
-
-        {'Function':{
-            'Apply': () => {
-
-				// First, we have to retrieve the current value 
-				// for the hp variable
-				const { knowledgePoints } = monogatari.storage ('knowledgePoints');
-
-				// Now, we can either substract or add those 20 points.
-				//const newKnowledgePoints = knowledgePoints + 1;
-
-				// Finally, we can perform the update
-				// We add the 20 points and update the value
-				// in a single step
-				monogatari.storage ({
-					stats: {
-						knowledgePoints: knowledgePoints + 1
-					}
-				});
-            },
-
-        }},
-
-		'jump Welcome-Center-2',
+		
+		'jump Welcome-Center-2-Silkworms',
 	],
 
+	
 	// Going inside the visitor center
 
-	'Welcome-Center-2': [
-		'show scene visitor-center-entrance with fadeIn',
-		'k:normal We are at the Visitor Center now.',
-		'k:normal Let\'s go in.',
-		'stop music mainTheme with fade 2',
-		'show scene visitor-center-entrance with shake 1s',
-		'play sound monsterRoar with volume 30',
-		'k:normal !! What was that?!',
-		'play music mainTheme with volume 20 fade 2 loop',
-		'show scene visitor-center-entrance with fadeIn',
+	'Welcome-Center-2-Silkworms': [
 
-		'k:normal !! What was that?!',
-		'p:normal I don\'t know.',
-		'n:normal Was it a dog?',
-		'k:normal I guess it\s OK.',
-		'k:normal So... let\s go in.',
-		'p:normal OK. After you!',
+		// Introduce silkworms
+		'show scene visitor-center-silkworms with fadeIn',
+		'k:normal These are silkworms.',
+		'k:normal Silkworms are caterpillars.',
+		'n:normal Just like the Hungry, Hungry Caterpillar!',
+		'k:normal Yes... but we can use the thread from silkworm cocoons to make silk.',
 
-        {'Function':{
-            'Apply': () => {
+		// Show silkworms close up
+		'show scene visitor-center-silkworms-closeup with fadeIn',
+		'k:normal Here they are! Aren\'t they cute?',
+		'p:normal Ummm... sure.',
+		'n:normal Yes, of course.',
+	
+		{
+			'Choice': {
 
-				// First, we have to retrieve the current value 
-				// for the hp variable
-				const { knowledgePoints } = monogatari.storage ('knowledgePoints');
+				//'Dialog': 'centered Do you know Nick? <br><br><br><br><br><br><br><br><br><br>',
+				'Dialog': 'k:normal Oh! Let\'s go this way! We can see a video about the Tajima Yahei Sericulture Farm.',
+				
+				'Yes': {
+					'Text': 'Sure, let\'s go watch the video.',
+					'Do': 'jump Welcome-Center-2-Video'
+				},
+				'No': {
+					'Text': 'Umm, let\'s look around some more.',
+					'Do': 'jump Welcome-Center-2-Exhibits'
+				}
+			}
+		}
+	],
 
-				// Now, we can either substract or add those 20 points.
-				//const newKnowledgePoints = knowledgePoints + 1;
+	
+	
+	// Going inside the visitor center
 
-				// Finally, we can perform the update
-				// We add the 20 points and update the value
-				// in a single step
-				monogatari.storage ({
-					stats: {
-						knowledgePoints: knowledgePoints + 1
-					}
-				});
-            },
+	'Welcome-Center-2-Video': [
+	],
 
-        }},
+	
+	
+	// Going inside the visitor center
+
+	'Welcome-Center-2-Exhibits': [
 
 
-			
-		
-        // Start    
-        'show scene visitor-center-entrance with fadeIn',
-        'show scene visitor-center-nick with fadeIn',
-
-        // Visitor Center
-        'show scene visitor-center-silkworms with fadeIn',
-        'show scene visitor-center-silkworms-closeup with fadeIn',
         'show scene visitor-center-video with fadeIn',
         'show scene visitor-center-video-nick with fadeIn',
         'show scene visitor-center-video-kuwamaru with fadeIn',
@@ -963,24 +939,24 @@ monogatari.script ({
 
 		{
 			'Choice': {
-				'Dialog n:normal I think it was a little earthquake. Nick Have you already read some documentation?',
+				'Dialog': 'n:normal I think it was a little earthquake. Have you already read some documentation?',
+
 				'Yes': {
-					'Text Yes',
-					'Do jump Yes'
+					'Text': 'Yes',
+					'Do': 'jump Yes'
 				},
 				'No': {
-					'Text No',
-					'Do jump No'
+					'Text': 'No',
+					'Do': 'jump No'
 				}
 			}
 		}
 	],
 
-
 	'Yes': [
 		'k Thats awesome!',
 		'k Then you are ready to go ahead and create an amazing Game!',
-		'k I can\'t wait to see what story you\'ll tell!',
+		'k I can’t wait to see what story you’ll tell!',
 		'end'
 	],
 
@@ -991,8 +967,7 @@ monogatari.script ({
 		'show message Help',
 
 		'Nick Go ahead and create an amazing Game!',
-		'Nick I can\'t wait to see what story you\'ll tell!',
+		'Nick I can’t wait to see what story you’ll tell!',
 		'end'
 	]
 });
-

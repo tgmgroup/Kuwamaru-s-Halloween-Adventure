@@ -52,12 +52,14 @@ body {
 
 /* Simple Button styles*/
 button {
-
+	
 }
 
 /* Simple Button Style on Hover */
 button:hover {
-
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: rgba(231, 181, 150, 0.884);
+	transition: background-color 0.2s;
 }
 
 /* General Styling for Menu Screens */
@@ -74,7 +76,7 @@ button:hover {
 /* Main Menu Styling */
 [data-screen="main"] {
 	background-color: black;
-	background-image: url("../assets/scenes/images/main-scene.JPG");
+	background-image: url("../assets/scenes/main-scene.JPG");
 }
 
 /* Main Menu Buttons Styling */
@@ -121,7 +123,7 @@ button:hover {
 
 /* Choice Button Style on Hover */
 [data-component="choice-container"] button:hover {
-
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* Text Box styling */
@@ -171,7 +173,10 @@ button:hover {
 
 /* Quick Menu Buttons Style on Hover */
 [data-component="quick-menu"] span:hover {
-
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	animation: glowing 1300ms infinite;
+	background-color: rgba(231, 181, 150, 0.884);
+	transition: background-color 0.2s;
 }
 
 /* Quick Menu Buttons Icon Style */
@@ -268,3 +273,19 @@ input[type=range]::-ms-fill-upper {
 @media screen and (min-width: 500em) {
 
 }
+
+
+@keyframes glowing {
+    0% {
+      background-color: #2ba805;
+      box-shadow: 0 0 3px #2ba805;
+    }
+    50% {
+      background-color: #49e819;
+      box-shadow: 0 0 10px #49e819;
+    }
+    100% {
+      background-color: #2ba805;
+      box-shadow: 0 0 3px #2ba805;
+    }
+  }
