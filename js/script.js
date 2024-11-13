@@ -633,6 +633,7 @@ monogatari.characters({
 			normal: "player (1).jpg",
 			handsonhips: "player (2).jpg",
 		},
+		
 	},
 	k: {
 		name: "Kuwamaru",
@@ -811,7 +812,6 @@ monogatari.script({
 	],
 
 	// Going inside the visitor center
-
 	"Welcome-Center-2-Silkworms": [
 		// Introduce silkworms
 		"show scene visitor-center-silkworms with fadeIn",
@@ -826,6 +826,49 @@ monogatari.script({
 		"p:normal Ummm... sure.",
 		"n:normal Yes, of course.",
 
+		// Add a knowledge point for learning about silkworms
+		{
+			Function: {
+				Apply: () => {
+					const {
+						hp, mp, inventory: { knowledge, silkwormPoints }
+					} = monogatari.storage("stats");
+					monogatari.storage({
+						stats: {
+							inventory: {
+								knowledge: knowledge + 1,
+								silkwormPoints: 1,
+							},
+						},
+					});
+				},
+				'Revert': () => {
+					const {
+						hp, mp, inventory: { knowledge, silkwormPoints }
+					} = monogatari.storage("stats");
+					monogatari.storage({
+						stats: {
+							inventory: {
+								knowledge: knowledge,
+								silkwormPoints: 0,
+							},
+						},
+					});
+				},
+			},
+		},
+
+		"play sound learningPoint with volume 30",
+		"p:normal Hey, I learned something!",
+		"p:normal I learned {{stats.inventory.knowledge}} things so far today.",
+
+		'jump Welcome-Center-2-Choice',
+
+	],
+		
+	"Welcome-Center-2-Choice": [
+		"show scene visitor-center-silkworms with fadeIn",
+		// Decide whether to watch the video or the exhibits
 		{
 			Choice: {
 				Dialog:
@@ -844,6 +887,37 @@ monogatari.script({
 	],
 
 	"Welcome-Center-2-Video": [
+
+		{'Conditional': {
+			'Condition': function(){
+				if(this.storage().inventory{videoPoints} = 1) {
+					return "repeated";
+			},
+			"repeated":  {
+			"p:normal Didn't we watch the video already?",
+			'jump Welcome-Center-2-Choice',
+			},
+
+		}}},
+
+		{'Conditional': {
+			'Condition': function(){
+				if(this.storage().money < 1) {
+					return "Too poor";
+				} else if (this.storage < 4) {
+					return this.storage ('money') + '';
+				} else {
+					return 'Rich';
+				}
+			},
+			'Too poor': 'jump goHomeEmptyHanded',
+			'1': 'jump buyADollarItem',
+			'2': 'jump buySomethingGood',
+			'3': 'jump buyAComboMeal',
+			'Rich': 'jump buyTheWholeStore',
+		}},
+
+
 		// Introduce silkworms
 		"show scene visitor-center-video with fadeIn",
 		"k:normal Silk has a lot of history in Japan.",
@@ -858,9 +932,32 @@ monogatari.script({
 		"show scene visitor-center-video-tajima with fadeIn",
 		"k:normal He went to Europe to learn about them and studied them here in Japan, too.",
 		"k:normal He helped people all over Japan to grow silkworms.",
-		"n:normal He created yagura, right?",
-		"k:normal Yes! Yagura kept silkworm farms cool, so silkworms didn't get sick.",
+		"n:normal He created <i>yagura</i>, right?",
+		"k:normal Yes! <i>Yagura</i> kept silkworm farms cool, so silkworms didn't get sick.",
 		"p:normal That's the reason the Tajima Yahei Sericulture Farm is a world heritage site, then.",
+
+		// Add a knowledge point for watching the video
+		{
+			Function: {
+				Apply: () => {
+					const {
+						inventory: { knowledge,videoPoints },
+					} = monogatari.storage("stats");
+					monogatari.storage({
+						stats: {
+							inventory: {
+								knowledge: knowledge + 1,
+								videoPoints: 1;
+							},
+						},
+					});
+				},
+			},
+		},
+
+		"play sound learningPoint with volume 30",
+		"p:normal Hey, I learned something!",
+		"p:normal I learned {{stats.inventory.knowledge}} things so far today.",
 
 		{
 			Choice: {
@@ -879,19 +976,77 @@ monogatari.script({
 	],
 
 	"Welcome-Center-2-Exhibits": [
+
+		{'Conditional': {
+			'Condition': function(){
+				if(this.storage().exhibitPoints = 1) {
+					return "repeated";
+			},
+			'repeated': 
+			"p:normal Didn't we see the exhibits already?",
+			'jump Welcome-Center-2-Choice',
+
+		}},
+
+				// Show exhbits
+				"k:normal Let's look at the farm first.",
 		"show scene visitor-center-exhibithouse with fadeIn",
+
+		"k:normal This is a model of Tajima Yahei Sericulture Farm.",
+		"p:normal Oh, there are a lot of buildings there.",
+		"k:normal Yes, but some of the buildings are not there anymore.",
+		"k:normal We'll learn more when we go see the farm later today.",
+		"p:normal OK!",
+
 		"show scene visitor-center-exhibitbook with fadeIn",
+		"k:normal This are some of the books Tajima Yahei wrote.",
+		"p:normal Wow, there are a lot!",
+
 		"show scene visitor-center-exhibitmicroscope with fadeIn",
+		"k:normal This is the microscope Tajima Yahei got in Italy.",
+		"p:normal Oh, he used it to study silkworms, right?",
+		"k:normal Yes. He learned how to keep silkworms healthy.",
+		"k:normal That's why he could write so many books.",
+
 		"show scene visitor-center-exhibitshibusawa with fadeIn",
+		"k:normal Did you know that Shibusawa Eiichi and Tajima Yahei are relatives?",
+		"n:normal Who is Shibusawa Eiichi?",
+		"p:normal He's on the new Japanese 10,000 yen bill, isn't he?",
+		"k:normal Yes! He helped many people make money with his ideas.",
+		"k:normal He helped the silk industry, too. He helped build the Tomioka Silk Mill.",
+		"k:normal He talked with Tajima Yahei about going to Europe to sell silkworms.",
+		"n:normal Oh, I didn't know that.",
+
+
+		// Add a knowledge point for going through the exhibits
+		{
+			Function: {
+				Apply: () => {
+					const {
+						inventory: { knowledge, exhibitPoints },
+					} = monogatari.storage("stats");
+					monogatari.storage({
+						stats: {
+							inventory: {
+								knowledge: knowledge + 1,
+								exhibitPoints: 1;
+							},
+						},
+					});
+				},
+			},
+		},
+
+		"play sound learningPoint with volume 30",
+		"p:normal Hey, I learned something!",
+		"p:normal I learned {{stats.inventory.knowledge}} things so far today.",
+
 		"show scene visitor-center-oldvisitorcenter with fadeIn",
 
-		"k:normal Yes! Now let's go see some of his things!",
 
-		// Show silkworms close up
+
+
 		"show scene visitor-center-silkworms-closeup with fadeIn",
-		"k:normal Here they are! Aren't they cute?",
-		"p:normal Ummm... sure.",
-		"n:normal Yes, of course.",
 
 		"show scene visitor-center-video-nick with fadeIn",
 
@@ -939,6 +1094,14 @@ monogatari.script({
 		"show scene path1b-signboard with fadeIn",
 		"show scene path1a-backgate with fadeIn",
 
+
+		"stop music mainTheme with fade 2",
+		"show scene visitor-center-nick with shake 1s",
+		"play sound monsterRoar with volume 30",
+		"k:normal !! What was that?!",
+		"play music mainTheme with volume 20 fade 2 loop",
+
+
 		{
 			Choice: {
 				Dialog:
@@ -954,8 +1117,6 @@ monogatari.script({
 				},
 			},
 		},
-
-		"jump Tajima-Residence",
 	],
 
 	"Tajima-Residence": [
