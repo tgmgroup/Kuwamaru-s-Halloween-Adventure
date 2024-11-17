@@ -633,7 +633,6 @@ monogatari.characters({
 			normal: "player (1).jpg",
 			handsonhips: "player (2).jpg",
 		},
-		
 	},
 	k: {
 		name: "Kuwamaru",
@@ -826,46 +825,13 @@ monogatari.script({
 		"p:normal Ummm... sure.",
 		"n:normal Yes, of course.",
 
-		// Add a knowledge point for learning about silkworms
-		{
-			Function: {
-				Apply: () => {
-					const {
-						hp, mp, inventory: { knowledge, silkwormPoints }
-					} = monogatari.storage("stats");
-					monogatari.storage({
-						stats: {
-							inventory: {
-								knowledge: knowledge + 1,
-								silkwormPoints: 1,
-							},
-						},
-					});
-				},
-				'Revert': () => {
-					const {
-						hp, mp, inventory: { knowledge, silkwormPoints }
-					} = monogatari.storage("stats");
-					monogatari.storage({
-						stats: {
-							inventory: {
-								knowledge: knowledge,
-								silkwormPoints: 0,
-							},
-						},
-					});
-				},
-			},
-		},
-
 		"play sound learningPoint with volume 30",
 		"p:normal Hey, I learned something!",
 		"p:normal I learned {{stats.inventory.knowledge}} things so far today.",
 
-		'jump Welcome-Center-2-Choice',
-
+		"jump Welcome-Center-2-Choice",
 	],
-		
+
 	"Welcome-Center-2-Choice": [
 		"show scene visitor-center-silkworms with fadeIn",
 		// Decide whether to watch the video or the exhibits
@@ -886,37 +852,22 @@ monogatari.script({
 		},
 	],
 
+	"Welcome-Center-2-Video-Repeated": [
+		"p:normal Didn't we watch the video already?",
+		"jump Welcome-Center-2-Video",
+	],
+
 	"Welcome-Center-2-Video": [
-
-		{'Conditional': {
-			'Condition': function(){
-				if(this.storage().inventory{videoPoints} = 1) {
-					return "repeated";
+		{
+			Conditional: {
+				Condition: function () {
+					if ((this.storage().stats().inventory().videoPoints = 1)) {
+						return "repeated";
+					}
+				},
+				repeated: "jump Welcome-Center-2-Video-Repeated",
 			},
-			"repeated":  {
-			"p:normal Didn't we watch the video already?",
-			'jump Welcome-Center-2-Choice',
-			},
-
-		}}},
-
-		{'Conditional': {
-			'Condition': function(){
-				if(this.storage().money < 1) {
-					return "Too poor";
-				} else if (this.storage < 4) {
-					return this.storage ('money') + '';
-				} else {
-					return 'Rich';
-				}
-			},
-			'Too poor': 'jump goHomeEmptyHanded',
-			'1': 'jump buyADollarItem',
-			'2': 'jump buySomethingGood',
-			'3': 'jump buyAComboMeal',
-			'Rich': 'jump buyTheWholeStore',
-		}},
-
+		},
 
 		// Introduce silkworms
 		"show scene visitor-center-video with fadeIn",
@@ -941,13 +892,13 @@ monogatari.script({
 			Function: {
 				Apply: () => {
 					const {
-						inventory: { knowledge,videoPoints },
+						inventory: { knowledge, videoPoints },
 					} = monogatari.storage("stats");
 					monogatari.storage({
 						stats: {
 							inventory: {
 								knowledge: knowledge + 1,
-								videoPoints: 1;
+								videoPoints: 1,
 							},
 						},
 					});
@@ -975,21 +926,25 @@ monogatari.script({
 		},
 	],
 
+	"Welcome-Center-2-Exhibits-Repeated": [
+		"p:normal Didn't we watch the video already?",
+		"jump Welcome-Center-2-Video",
+	],
+
 	"Welcome-Center-2-Exhibits": [
-
-		{'Conditional': {
-			'Condition': function(){
-				if(this.storage().exhibitPoints = 1) {
-					return "repeated";
+		{
+			Conditional: {
+				Condition: function () {
+					if ((this.storage().stats().inventory().exhibitPoints = 1)) {
+						return "repeated";
+					}
+				},
+				repeated: "jump Welcome-Center-2-Exhibits-Repeated",
 			},
-			'repeated': 
-			"p:normal Didn't we see the exhibits already?",
-			'jump Welcome-Center-2-Choice',
+		},
 
-		}},
-
-				// Show exhbits
-				"k:normal Let's look at the farm first.",
+		// Show exhbits
+		"k:normal Let's look at the farm first.",
 		"show scene visitor-center-exhibithouse with fadeIn",
 
 		"k:normal This is a model of Tajima Yahei Sericulture Farm.",
@@ -1017,7 +972,6 @@ monogatari.script({
 		"k:normal He talked with Tajima Yahei about going to Europe to sell silkworms.",
 		"n:normal Oh, I didn't know that.",
 
-
 		// Add a knowledge point for going through the exhibits
 		{
 			Function: {
@@ -1029,7 +983,7 @@ monogatari.script({
 						stats: {
 							inventory: {
 								knowledge: knowledge + 1,
-								exhibitPoints: 1;
+								exhibitPoints: 1,
 							},
 						},
 					});
@@ -1042,9 +996,6 @@ monogatari.script({
 		"p:normal I learned {{stats.inventory.knowledge}} things so far today.",
 
 		"show scene visitor-center-oldvisitorcenter with fadeIn",
-
-
-
 
 		"show scene visitor-center-silkworms-closeup with fadeIn",
 
@@ -1094,13 +1045,11 @@ monogatari.script({
 		"show scene path1b-signboard with fadeIn",
 		"show scene path1a-backgate with fadeIn",
 
-
 		"stop music mainTheme with fade 2",
 		"show scene visitor-center-nick with shake 1s",
 		"play sound monsterRoar with volume 30",
 		"k:normal !! What was that?!",
 		"play music mainTheme with volume 20 fade 2 loop",
-
 
 		{
 			Choice: {
