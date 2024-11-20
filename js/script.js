@@ -1464,7 +1464,6 @@ monogatari.script({
 		},
 
 
-	],
 
 
 		"play sound learningPoint with volume 30",
@@ -1475,12 +1474,6 @@ monogatari.script({
 	],
 
 
-
-
-	"Tajima-Residence-Inside-Main-Repeated": [
-		"p:normal Didn't we go inside already?",
-		"jump Tajima-Residence-Main-Choice",
-	],
 
 
 	// Exiting the Tajima Yahei Sericulture Farm
