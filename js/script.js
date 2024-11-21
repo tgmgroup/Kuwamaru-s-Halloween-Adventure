@@ -620,7 +620,7 @@ monogatari.assets("scenes", {
 
 	// Tajima Residence
 	"tajima1-maingate": "tajima1-maingate.JPG",
-	"tajima1-everyonetogether": "tajima1-everyonetogether.JPG",
+	"tajima1-everyonetogether": "tajima1-everyonetogether.jpg",
 	"tajima1-houseandgarden": "tajima1-houseandgarden.JPG",
 	"tajima1-museumandbuildings": "tajima1-museumandbuildings.JPG",
 	"tajima1-parismedals": "tajima1-parismedals.JPG",
