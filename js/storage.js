@@ -17,14 +17,12 @@ monogatari.storage ({
 	silkwormPoints: false,
 	videoPoints: false,
 	exhibitPoints: false,
-	frontGatePoints: false,
 	museumPoints: false,
 	guidePoints: false,
 	storagePoints: false,
 	factoryPoints: false,
 	housePoints: false,
 	outsidePoints: false,
-	backGatePoints: false,
 	gAnddPoints: false,
 
 });
