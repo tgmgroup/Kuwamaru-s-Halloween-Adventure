@@ -799,7 +799,7 @@ monogatari.script({
 		"show particles universe",
 		"show scene visitor-center-entrance with fadeIn",
 		//'show notification Welcome',
-		"play music mainTheme with volume 20 fade 2 loop",
+		"play music mainTheme with volume 30 fade 2 loop",
 		{
 			Input: {
 				Text: "What is your name?",
@@ -881,10 +881,10 @@ monogatari.script({
 		"k:normal Let's go in.",
 		"stop music mainTheme with fade 2",
 
-		"play sound monsterRoar with volume 10",
+		"play sound monsterRoar with volume 20",
 		"show scene visitor-center-nick with shake .5s",
 		"k:normal !! What was that?!",
-		"play music mainTheme with volume 20 fade 2 loop",
+		"play music mainTheme with volume 30 fade 2 loop",
 		"show scene visitor-center-nick with fadeIn",
 
 		"p:normal I don't know.",
@@ -932,7 +932,7 @@ monogatari.script({
 
 		"play sound learningPoint with volume 30",
 		"p:normal Hey, I learned something!",
-		"p:normal I learned {{stats.inventory.knowledge}} things so far today.",
+		"p:normal I learned {{stats.inventory.knowledge}} thing so far today.",
 
 		"jump Welcome-Center-2-Choice",
 	],
@@ -1134,7 +1134,7 @@ monogatari.script({
 	Path: [
 		// Path to Tajima House
 		"stop music mainTheme with fade 2",
-		"play music farmTheme with volume 20 fade 2 loop",
+		"play music farmTheme with volume 30 fade 2 loop",
 
 		"show scene visitor-center-oldvisitorcenter with fadeIn",
 		"k:normal This is the old visitor center.",
@@ -1159,7 +1159,7 @@ monogatari.script({
 		"p:normal O...K... Thanks for singing it for me.",
 		"stop sound mulberryBush with volume 50 loop",
 
-		"play music farmTheme with volume 20 fade 2 loop",
+		"play music farmTheme with volume 30 fade 2 loop",
 
 		"show scene path1c-acrosstheroad with fadeIn",
 		"k:normal We have to cross the road here.",
@@ -1783,16 +1783,16 @@ monogatari.script({
 
 		"stop music farmTheme with fade 2",
 		"show scene path1a-backgate with fadeIn",
-		"play music scaryTheme with volume 20 fade 2 loop",
+		"play music scaryTheme with volume 30 fade 2 loop",
 
 		"k:normal Hmmmm...",
 		"p:normal Something is different...",
 
 		"show scene path1b-signboard with fadeIn",
 		"n:normal Something sure <i>is</i> different...",
-		"play sound monsterRoar with volume 10",
+		"play sound monsterRoar with volume 20",
 		"k:normal Let's hurry up...",
-		"play sound monsterRoar with volume 10",
+		"play sound monsterRoar with volume 30",
 
 		"n:normal What's that?",
 		"show scene zombie1 with fadeIn",
@@ -1823,9 +1823,9 @@ monogatari.script({
 
 	"Path-Back-Choice-1-Bad": [
 		"stop music runningTheme with fade 2",
-		"play sound carCrash with volume 20",
+		"play sound carCrash with volume 30",
 
-		"play music badEndingTheme with volume 20 fade 2 loop",
+		"play music badEndingTheme with volume 30 fade 2 loop",
 		"show scene zombie1 with fadeIn",
 		"show scene zombie1 with shake 1s",
 		"z1:normal You were not careful.",
@@ -1858,16 +1858,16 @@ monogatari.script({
 	],
 
 	"Path-Back-Choice-1-Good": [
-		"play sound carSqueal with volume 20",
+		"play sound carSqueal with volume 30",
 		"show scene path1c-acrosstheroad with fadeIn",
 		"k:running Whoah! We almost got hit by that car!",
 		"p:running We have to be careful!",
 
-		"play sound monsterRoar with volume 10",
+		"play sound monsterRoar with volume 30",
 		"show scene zombie2 with shake .5s",
 		"z1:normal Rrrraaaaaaaaarrrrggggghhhhh...",
 		"n:running The zombies are still coming!",
-		"play sound monsterRoar with volume 10",
+		"play sound monsterRoar with volume 30",
 
 		"show scene path1d-mulberries with fadeIn",
 		"k:running Hey, these are mulberries! ",
@@ -1893,29 +1893,33 @@ monogatari.script({
 
 	"Path-Back-Choice-2-Bad": [
 		"show scene path1d-mulberries with fadeIn",
-		"play sound monsterRoar with volume 20",
+		"play sound monsterRoar with volume 30",
 		"show scene path1d-mulberries with shake .5s",
+		"show scene zombie1 with shake .5s",
 		"k:running Hey! Take that! (throws a mulberry)",
 		"play sound throwBerries with volume 30",
 		"z1:normal Oouuuuuchhhhhhhh...",
 		"play sound throwBerries with volume 30",
+		"show scene zombie2with shake .5s",
 		"p:running Here's another one!",
 		"play sound monsterRoar with volume 30",
 		"play sound throwBerries with volume 30",
 
+		"show scene zombie3 with shake .5s",
 		"k:running There's too many!",
-		"play sound throwBerries with volume 30",
-		"play sound monsterRoar with volume 30",
-		"play sound throwBerries with volume 30",
-		"play sound monsterRoar with volume 30",
-		"play sound throwBerries with volume 30",
-		"play sound throwBerries with volume 30",
-		"play sound monsterRoar with volume 30",
+		"show scene zombie4 with shake .5s",
+		"play sound throwBerries with volume 35",
+		"play sound monsterRoar with volume 35",
+		"play sound throwBerries with volume 40",
+		"play sound monsterRoar with volume 40",
+		"play sound throwBerries with volume 40",
+		"play sound throwBerries with volume 50",
+		"play sound monsterRoar with volume 50",
 
 		"stop music runningTheme with fade 2",
 		"show scene zombie2 with fadeIn",
 		"show scene zombie2 with shake 1s",
-		"play music badEndingTheme with volume 20 fade 2 loop",
+		"play music badEndingTheme with volume 30 fade 2 loop",
 
 		"z2:normal You took too long.",
 		"z2:normal You didn't run, so the zombies caught you.",
@@ -1950,9 +1954,11 @@ monogatari.script({
 		"show scene path1d-mulberries with fadeIn",
 		"k:running We are almost there!",
 		"n:running Keep running!",
-		"play sound monsterRoar with volume 10",
-		"show scene path1d-mulberries with shake .5s",
+		"show scene zombie2 with shake .5s",
+		"play sound monsterRoar with volume 30",
+		"show scene zombie3 with shake .5s",
 		"p:running But there are so many of them!",
+		"show scene zombie4 with shake .5s",
 
 		"p:running What should we do?",
 		"k:running We can go to the park!",
@@ -1984,7 +1990,7 @@ monogatari.script({
 		"stop music runningTheme with fade 2",
 		"show scene zombie3 with fadeIn",
 		"show scene zombie3 with shake 1s",
-		"play music badEndingTheme with volume 20 fade 2 loop",
+		"play music badEndingTheme with volume 30 fade 2 loop",
 
 		"z3:normal You forgot that there aren't many buses here.",
 		"z3:normal The bus didn't come, and the zombies caught you.",
@@ -2019,7 +2025,7 @@ monogatari.script({
 		"show scene visitor-center-nick with fadeIn",
 		"n:running We made it?",
 		"k:running Keep going! We have to go inside!",
-		"play sound monsterRoar with volume 10",
+		"play sound monsterRoar with volume 30",
 		"show scene visitor-center-silkworms with fadeIn",
 		"p:running They came inside with us!",
 		"show scene visitor-center-silkworms with shake .5s",
@@ -2045,7 +2051,7 @@ monogatari.script({
 		"n:normal Aren't those zombies?",
 		"d:normal No, they're just students from our schools.",
 
-		"play music goodEndingTheme with volume 20 fade 2 loop",
+		"play music goodEndingTheme with volume 30 fade 2 loop",
 
 		"z4:normal Hello!",
 		"z1:normal We tried so hard to talk to you!",
